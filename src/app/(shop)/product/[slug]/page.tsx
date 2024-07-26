@@ -1,7 +1,7 @@
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
-import { SizeSelector } from "@/components";
+import { QuantitySelector, SizeSelector } from "@/components";
 
 
 interface Props {
@@ -34,12 +34,16 @@ export default function({ params }: Props) {
         </h1>
 
         <p className="text-lg mb-5">
-          { product.price }
+          ${ product.price }
         </p>
 
         <SizeSelector  
           selectedSize={ product.sizes[0] }
           availableSizes={ product.sizes }
+        />
+
+        <QuantitySelector 
+          quantity={ 2 }
         />
 
         <button className="btn-primary my-5">
