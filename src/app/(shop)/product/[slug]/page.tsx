@@ -1,7 +1,7 @@
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
-import { QuantitySelector, SizeSelector } from "@/components";
+import { ProductSlideshow, QuantitySelector, SizeSelector } from "@/components";
 
 
 interface Props {
@@ -24,7 +24,10 @@ export default function({ params }: Props) {
   return (
     <div className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
       <div className="col-span-1 md:col-span-2">
-        <h1>Hola mundo</h1>
+        <ProductSlideshow 
+          images={ product.images }
+          title={ product.title }
+        />
       </div>
       
       <div className="col-span-1 px-5">
